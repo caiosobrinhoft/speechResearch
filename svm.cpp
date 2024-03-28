@@ -4,29 +4,13 @@
 #include "svm.c"
 int main()
 {
-double V1[] = 	
-		{
-0.1, 0.2, 0.3, 0.5,
-0.4, 0.5, 0.6, 0.5, 
-0.7, 0.8, 0.9, 0.2,  
-0.2, 0.4, 0.6, 0.2,
-0.8, 0.1, 0.3, 0.8,
-0.5, 0.7, 0.9, 0.9
-		  }; //6 exemplos de treinamento com 4 elementos (parametros) cada   
 
-double V2[] = 
-		{
-1,
-1,
-1, 
--1,
--1,
--1,
-		  };//os 3+3 resultados correspondentes. -1 significa classe A e 1 significa classe B. No caso, sao duas classes
+double V1[40820];
+double V2[2041];
 
 svm n;
-int numero_de_amostras_de_cada_exemplo_de_entrada=4;  
-int numero_de_exemplos_de_treinamento=3+3; 
+int numero_de_amostras_de_cada_exemplo_de_entrada=20;  
+int numero_de_exemplos_de_treinamento=1354+687; 
 int numero_de_amostras_de_cada_exemplo_de_saida=1; //uma saida pra  cada  entrada 
 n.init(numero_de_amostras_de_cada_exemplo_de_entrada,numero_de_exemplos_de_treinamento,numero_de_amostras_de_cada_exemplo_de_saida); 
 n.train(V1,V2); // treinamento da rede
